@@ -1,0 +1,367 @@
+// Example Stylus file
+// All changes are detected and automatically compiled into CSS
+
+@import 'helpers'
+@import 'grid'
+@import 'bootstrap'
+
+// Main
+
+body, html
+  height: 100%
+  padding: 0
+
+body
+  font: normal 1em sans-serif
+  //vertical-gradient: #eee, #fff
+  //text-align: center
+  margin: 0
+
+p
+  //margin-bottom: 1em
+
+h1
+  font-size: 1.5em
+  margin: 1.5em
+  color: #0057c5
+  text-shadow: 1px 1px 2px white
+
+a
+  text-decoration: none
+  color: #ff4400
+
+li
+  list-style: none
+
+label
+  width: 100px
+  float: left
+
+input
+  width: 300px
+
+
+.inner
+  margin: 0
+  padding: 0
+
+#page
+  height: 100%
+  margin-top: 30px
+
+#page > div
+  height: 100%
+
+#content
+  float: left
+  height: 100%
+  .inner
+    height: 100%
+    padding: 0
+    margin: 0
+    width: 100%
+
+#map
+  width: 100%
+  height: 100%
+
+#left
+  height: 100%
+  float: left
+  border-right: 1px solid #999
+  z-index: 0
+  .inner
+    position: fixed
+    padding: 0
+    margin: 0
+    width: inherit
+    overflow: hidden
+
+#bar
+  height: 30px
+  width: 100%
+  background: #333
+  position: fixed
+  z-index: 1000
+  top: 0
+  li
+    margin: 0 10px
+    display: inline
+    a
+      color: #fff
+
+.venue a
+  padding: 5px 10px
+  font-size: 12px
+  color: #333
+
+.edit-event
+.edit-venue
+  padding: 20px;
+  margin-bottom: 20px;
+  label
+    display: block
+
+.ui-icon
+  float: right
+
+.ui-autocomplete
+  max-height: 300px
+  overflow-y: auto
+  overflow-x: hidden
+  //padding-right: 20px
+
+.dataTables_scrollBody
+  height: 860px !important
+
+.inline
+  display: inline
+  input
+    width: 97px
+.field-links .link
+  width: 100%
+  overflow: hidden
+  text-overflow: ellipsis
+
+input
+  width: 200px
+
+textarea
+  width: 100%
+  height: 6em
+
+table.display
+  td
+    padding: 6px 10px 0
+    height: 20px
+    font-size: 12px
+    input
+      margin-top: -4px
+  thead th
+    padding: 3px 11px
+
+.field-images .image
+  float: left
+  height: 170px
+  width: 170px
+  text-align: center
+  padding: 10px 5px
+  img
+    max-width: 100%
+    max-height: 100%
+    text-align: center
+
+.tableFooter
+  background: #333
+  height: 30px
+  position: absolute
+  bottom: 0
+  width: 100%
+  padding: 6px 0 6px 50px
+  .venue.title > input
+    width: 205px
+  .venue.website > input
+    width: 160px
+  .venue.category > input
+    width: 125px
+  .venue.score > input
+    width: 80px
+  .venue.count > input
+    width: 80px
+  .venue.isNew > input
+    width: 80px
+
+  .event.title > input
+    width: 320px
+  .event.category > input
+    width: 125px
+  .event.opening > input
+    width: 125px
+  .event.score > input
+    width: 80px
+  .event.isNew > input
+    width: 80px
+
+#tab-venues
+  display: block
+#tab-events
+  display: block
+#tab-artists
+  display: block
+
+.dataTables_filter
+  label
+    width: 400px
+    float: right
+    padding-top: 16px
+    padding-right: 20px
+
+#left
+  .ui-tabs
+  .ui-tabs-panel
+    padding: 0
+    margin: 0
+    border: 0
+    border-radius: 0
+
+//GRID
+
+
+.group:before,
+.group:after
+  content:"";
+  display:table;
+
+.group:after
+  clear:both;
+
+// Modal
+
+.reveal-modal
+  visibility: hidden
+  top: 100px
+  left: 50%
+  margin-left: -300px
+  width: 520px
+  background: #eee url(modal-gloss.png) no-repeat -200px -80px
+  position: absolute
+  z-index: 101
+  padding: 30px 40px 34px
+  -moz-border-radius: 5px
+  -webkit-border-radius: 5px
+  border-radius: 5px
+  -moz-box-shadow: 0 0 10px rgba(0,0,0,.4)
+  -webkit-box-shadow: 0 0 10px rgba(0,0,0,.4)
+  -box-shadow: 0 0 10px rgba(0,0,0,.4)
+
+.reveal-modal-bg
+  position: fixed
+  height: 100%
+  width: 100%
+  background: #000
+  background: rgba(0,0,0,.8)
+  z-index: 100
+  display: none
+  top: 0
+  left: 0
+
+.reveal-modal.small
+  width: 200px
+  margin-left: -140px
+.reveal-modal.medium
+  width: 400px
+  margin-left: -240px
+.reveal-modal.large
+  width: 600px
+  margin-left: -340px
+.reveal-modal.xlarge
+  width: 800px
+  margin-left: -440px
+
+.reveal-modal .close-reveal-modal
+  font-size: 22px
+  line-height: .5
+  position: absolute
+  top: 8px
+  right: 11px
+  color: #aaa
+  text-shadow: 0 -1px 1px rbga(0,0,0,.6)
+  font-weight: bold
+  cursor: pointer
+
+
+.window
+  width: 100%
+  height: 100%
+  top: 0
+  position: absolute
+  iframe
+    border: 0
+
+.button.close
+  padding: 10px
+  font-weight: bold
+  color: white
+  background: #ff4400
+  cursor: pointer
+  position: absolute
+  right: 0
+  top: 0
+
+  round-corner(bottom, left, 10px)
+
+.loading
+  font-size: 30px
+  color: #666
+  text-shadow: 2px 2px 0 #bbb
+  text-align: center
+  margin-top: 350px
+  font-weight: bold
+
+.icon
+  font-weight: bold
+  font-size: 16px
+  text-align: center
+.icon-open a
+  color: #666
+.icon-delete a
+  color: #ff6666
+.icon-status.status-0 a
+  color: #999
+.icon-status.status-1 a
+  color: #66aa33
+
+.field
+  margin: 5px 0
+  clearfix()
+
+.field label
+  font-weight: bold
+
+.accordion
+  margin: 20px 0
+
+.row_selected
+  background-color: #cc0000 !important
+  color: #fff !important
+.row_selected td
+  background-color: #cc0000 !important
+  color: #fff !important
+#delete
+  background: #cc0000
+  color: white
+
+td
+  overflow: hidden
+
+td.score
+td.events
+td.isNew
+td.status
+td.delete
+  text-align: center
+
+form select.multiple
+  height: 200px
+
+form div.input
+  margin-left: 120px
+
+form label
+  width: 100px
+
+.actions
+  text-align: center
+  padding: 20px 0
+.btn
+  margin: 0 5px
+
+.field-links .link
+.field-tags .tag
+  margin-left: 120px
+  span
+    width: 220px
+    display: inline-block
+    padding: 5px 0
+  a
+    color: #cc0000

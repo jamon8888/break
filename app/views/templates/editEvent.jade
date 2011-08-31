@@ -1,0 +1,100 @@
+form(action="#event-${event.attributes.id}-update", method="post", id="${event.attributes.id}")
+  .gs-12
+    fieldset
+      legend Event information
+      .field.field-title
+        label Title
+        .input
+          input(type="text", name='title', class='large', value='${event.attributes.title}')
+      .field.field-venue
+        label Venue
+        .input
+          input(type="text", name='venue', class='large', value='${event.attributes.venue}')
+          input(type="text", name='venue-value', class='large value', value='${event.attributes.venue}', style="display: hidden")
+      .field.field-score
+        label Score
+        .input
+          input(type="text", name='score', class='large', value='${event.attributes.score}')
+      .field.field-price
+        label Price
+        .input
+          input(type="text", name='price-from', class='small inline', value='${event.attributes.price.from}')
+          span  to
+          input(type="text", name='price-to', class='small inline', value='${event.attributes.price.to}')
+
+    fieldset
+      legend Media
+      .field.field-image
+        label Image
+        .input
+          input(type="text", name='image', class='large', value='${event.attributes.image}')
+      .fieldgroup.field-links
+        label Links
+        .input
+          input(type="text", name='link', class='large inline', value='')
+          button.btn.button.inline.add-link(type="button") Add
+          {{each(i, value) event.attributes.links}}
+          .link(name='${value}')
+            span: a(href='${value}', name='${value}') ${value}
+            button.btn.button.erase(type="button") &#x2716;
+          {{/each}}
+    fieldset
+      legend Details
+      .field.field-description.field-description-fr
+        label Description [fr]
+        .input
+          textarea(name='text_fr', class='xlarge', value='${event.attributes.text.fr}')
+      .field.field-description.field-description-en
+        label Description [en]
+        .input
+          textarea(name='text_en', class='xlarge', value='${event.attributes.text.en}')
+
+  .gs-12
+    fieldset
+      legend Categories + Tags
+      .field.field-category
+        label Categories
+        .input
+          select(multiple='multiple', class='multiple large')
+            {{each(i, value) event.categories}}
+            {{if value.selected}}
+            option(value='${value.id}', selected='selected') ${value.label}
+            {{else}}
+            option(value='${value.id}') ${value.label}
+            {{/if}}
+            {{/each}}
+      br
+      .fieldgroup.field-tags
+        label Tags
+        .input
+          input(type="text", name='tag', class='large inline', value='')
+          button.btn.button.inline.add-tag(type="button") Add
+          {{each(i, value) event.attributes.tags}}
+          .tag(name='${value}')
+            span: a(href='#', name='${value}') ${value}
+            button.btn.button.erase(type="button") &#x2716;
+          {{/each}}
+  .gs-24
+    .field.field-images
+      {{each(i, value) event.attributes.images}}
+      .image(name='${value}')
+        button.button.select(type="button") &#x2714;
+        //button.button.preview(type="button", data-reveal-id='image-${i}') &#x271A;
+        a(href="#", data-reveal-id='image-${i}', class="button preview") &#x271A;
+        button.btn.button.erase(type="button") &#x2716;
+        a(href='${value}'): img(src='${value}')
+      {{/each}}
+  .gs-24
+    //.gs-12
+    .buttons.actions
+      button.btn.primary.button.save(type="button") Save
+      button.btn.button.cancel(type="button") Cancel
+      span   |
+      button.btn.button.publish(type="button") Publish
+      button.btn.button.delete(type="button") Delete
+
+  {{each(i, value) event.attributes.images}}
+  div(id='image-${i}', class='reveal-modal')
+    a(href='${value}'): img(src='${value}')
+  {{/each}}
+

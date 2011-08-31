@@ -1,0 +1,121 @@
+form(action="#venue-${venue.attributes.id}-update", method="post", id="${venue.attributes.id}")
+  .gs-12
+    fieldset
+      legend Venue information
+      .field.field-title
+        label Title
+        .input
+          input(type="text", name='title', class='large', value='${venue.attributes.title}')
+      .field.field-address
+        label Address
+        .input
+          input(type="text", name='address', class='large', value='${venue.attributes.address}')
+      .field.field-zip
+        label Zip
+        .input
+          input(type="text", name='zip', class='large', value='${venue.attributes.zip}')
+      .field.field-website
+        label Website
+        .input
+          input(type="text", name='website', class='large', value='${venue.attributes.website}')
+      .field.field-email
+        label Email
+        .input
+          input(type="text", name='email', class='large', value='${venue.attributes.email}')
+      .field.field-telephone
+        label Telephone
+        .input
+          input(type="text", name='telephone', class='large', value='${venue.attributes.telephone}')
+      .field.field-fax
+        label Fax
+        .input
+          input(type="text", name='fax', class='large', value='${venue.attributes.fax}')
+      .field.field-score
+        label Score:
+        .input
+          input(type="text", name='score', class='large', value='${venue.attributes.score}')
+    fieldset
+      legend Media
+      .field.field-image
+        label Image
+        .input
+          input(type="text", name='image', class='large', value='${venue.attributes.image}')
+      .fieldgroup.field-links
+        label Links
+        .input
+          input(type="text", name='link', class='large inline', value='')
+          button.btn.button.inline.add-link(type="button") Add
+          {{each(i, value) venue.attributes.links}}
+          .link(name='${value}')
+            span: a(href='${value}', name='${value}') ${value}
+            button.btn.button.erase(type="button") &#x2716;
+          {{/each}}
+    fieldset
+      legend Details
+      .field.field-description.field-description-fr
+        label Description [fr]
+        .input
+          textarea(name='text_fr', class='xlarge', value='${venue.attributes.text.fr}')
+      .field.field-description.field-description-en
+        label Description [en]
+        .input
+          textarea(name='text_en', class='xlarge', value='${venue.attributes.text.en}')
+
+  .gs-12
+    fieldset
+      legend Categories + Tags
+      .field.field-category
+        label Categories
+        .input
+          select(multiple='multiple', class='multiple large')
+            {{each(i, value) venue.categories}}
+            {{if value.selected}}
+            option(value='${value.id}', selected='selected') ${value.label}
+            {{else}}
+            option(value='${value.id}') ${value.label}
+            {{/if}}
+            {{/each}}
+      br
+      .fieldgroup.field-tags
+        label Tags
+        .input
+          input(type="text", name='tag', class='large inline', value='')
+          button.btn.button.inline.add-tag(type="button") Add
+          {{each(i, value) venue.attributes.tags}}
+          .tag(name='${value}')
+            span: a(href='#', name='${value}') ${value}
+            button.btn.button.erase(type="button") &#x2716;
+          {{/each}}
+    fieldset
+      legend Events
+      .field.field-events
+        label events
+        .input
+          {{each(i, value) venue.events}}
+          a(href='#edit${value}') ${value}
+          br
+          {{/each}}
+  .gs-24
+    .field.field-images
+      {{each(i, value) venue.attributes.images}}
+      .image(name='${value}')
+        button.button.select(type="button") &#x2714;
+        //button.button.preview(type="button", data-reveal-id='image-${i}') &#x271A;
+        a(href="#", data-reveal-id='image-${i}', class="button preview") &#x271A;
+        button.btn.button.erase(type="button") &#x2716;
+        a(href='${value}'): img(src='${value}')
+      {{/each}}
+  .gs-24
+    //.gs-12
+    .buttons.actions
+      button.btn.primary.button.save(type="button") Save
+      button.btn.button.cancel(type="button") Cancel
+      span   |
+      button.btn.button.publish(type="button") Publish
+      button.btn.button.delete(type="button") Delete
+
+  {{each(i, value) venue.attributes.images}}
+  div(id='image-${i}', class='reveal-modal')
+    a(href='${value}'): img(src='${value}')
+  {{/each}}
+

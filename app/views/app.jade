@@ -1,0 +1,25 @@
+!!! 5
+html(lang="en")
+  head
+    != SocketStream
+    title Break
+    //- meta(name='viewport', content='initial-scale=1.0, user-scalable=no')
+  body
+    #bar.group
+      ul.group
+        li: a(href="#list/venues") venues
+        li: a(href="#list/events") events
+        li |
+        li: a(href="#new/venue") add venue
+        li: a(href="#new/event") add event
+        li |
+        li: a(href="#window/google") google
+        li: a(href="#window/google-images") google images
+        //li |
+        //li: span(id="publish") UN/PUBLISH
+        //li: span(id="delete") DELETE
+    #page.gs-container.group
+      #left.gs-12
+        .inner
+      #content.gs-12
+        .inner

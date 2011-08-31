@@ -1,0 +1,23 @@
+.venue
+  form(action="#venue-${venue.attributes.id}-update", method="post")
+    .field.field-title
+      label Title:
+      input(name='title', value='${venue.attributes.title}')
+    .field.field-address
+      label Address:
+      input(name='address', value='${venue.attributes.address}')
+    .field.field-website
+      label Website:
+      input(name='website', value='${venue.attributes.website}')
+    .field.field-email
+      label Email:
+      input(name='email', value='${venue.attributes.email}')
+    .field.field-telephone
+      label Telephone:
+      input(name='telephone', value='${venue.attributes.telephone}')
+    .field.field-fax
+      label Fax:
+      input(name='fax', value='${venue.attributes.fax}')
+    .buttons
+      button.button.save(type="button") Save
+      button.button.delete(type="button") Delete

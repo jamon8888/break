@@ -1,0 +1,182 @@
+/**
+ * Base
+**/
+
+$cols = 24
+//$max = 960px
+$max = 100%
+$inc = $max/$cols
+$gap = 0.1%
+
+gs()
+  display: inline;
+  float: left;
+  position: relative;
+  margin-left: $gap / 2;
+  margin-right: $gap / 2;
+
+/**
+ * Container
+**/
+
+.gs-container {
+  margin: 0 auto;
+  width: $max;
+}
+
+/**
+ * Grid
+**/
+
+.gs-1 { gs(); width: $inc - $gap; }
+.gs-2 { gs(); width: $inc * 2 - $gap; }
+.gs-3 { gs(); width: $inc * 3 - $gap; }
+.gs-4 { gs(); width: $inc * 4 - $gap; }
+.gs-5 { gs(); width: $inc * 5 - $gap; }
+.gs-6 { gs(); width: $inc * 6 - $gap; }
+.gs-7 { gs(); width: $inc * 7 - $gap; }
+.gs-8 { gs(); width: $inc * 8 - $gap; }
+.gs-9 { gs(); width: $inc * 9 - $gap; }
+.gs-10 { gs(); width: $inc * 10 - $gap; }
+.gs-11 { gs(); width: $inc * 11 - $gap; }
+.gs-12 { gs(); width: $inc * 12 - $gap; }
+.gs-13 { gs(); width: $inc * 13 - $gap; }
+.gs-14 { gs(); width: $inc * 14 - $gap; }
+.gs-15 { gs(); width: $inc * 15 - $gap; }
+.gs-16 { gs(); width: $inc * 16 - $gap; }
+.gs-17 { gs(); width: $inc * 17 - $gap; }
+.gs-18 { gs(); width: $inc * 18 - $gap; }
+.gs-19 { gs(); width: $inc * 19 - $gap; }
+.gs-20 { gs(); width: $inc * 20 - $gap; }
+.gs-21 { gs(); width: $inc * 21 - $gap; }
+.gs-22 { gs(); width: $inc * 22 - $gap; }
+.gs-23 { gs(); width: $inc * 23 - $gap; }
+.gs-24 { gs(); width: $inc * 24 - $gap; }
+
+/**
+ * Prefix
+**/
+
+.gs-prefix-1 { padding-left: $inc; }
+.gs-prefix-2 { padding-left: $inc * 2; }
+.gs-prefix-3 { padding-left: $inc * 3; }
+.gs-prefix-4 { padding-left: $inc * 4; }
+.gs-prefix-5 { padding-left: $inc * 5; }
+.gs-prefix-6 { padding-left: $inc * 6; }
+.gs-prefix-7 { padding-left: $inc * 7; }
+.gs-prefix-8 { padding-left: $inc * 8; }
+.gs-prefix-9 { padding-left: $inc * 9; }
+.gs-prefix-10 { padding-left: $inc * 10; }
+.gs-prefix-11 { padding-left: $inc * 11; }
+.gs-prefix-12 { padding-left: $inc * 12; }
+.gs-prefix-13 { padding-left: $inc * 13; }
+.gs-prefix-14 { padding-left: $inc * 14; }
+.gs-prefix-15 { padding-left: $inc * 15; }
+.gs-prefix-16 { padding-left: $inc * 16; }
+.gs-prefix-17 { padding-left: $inc * 17; }
+.gs-prefix-18 { padding-left: $inc * 18; }
+.gs-prefix-19 { padding-left: $inc * 19; }
+.gs-prefix-20 { padding-left: $inc * 20; }
+.gs-prefix-21 { padding-left: $inc * 21; }
+.gs-prefix-22 { padding-left: $inc * 22; }
+.gs-prefix-23 { padding-left: $inc * 23; }
+
+/**
+ * Suffix
+**/
+
+.gs-suffix-1 { padding-right: $inc; }
+.gs-suffix-2 { padding-right: $inc * 2; }
+.gs-suffix-3 { padding-right: $inc * 3; }
+.gs-suffix-4 { padding-right: $inc * 4; }
+.gs-suffix-5 { padding-right: $inc * 5; }
+.gs-suffix-6 { padding-right: $inc * 6; }
+.gs-suffix-7 { padding-right: $inc * 7; }
+.gs-suffix-8 { padding-right: $inc * 8; }
+.gs-suffix-9 { padding-right: $inc * 9; }
+.gs-suffix-10 { padding-right: $inc * 10; }
+.gs-suffix-11 { padding-right: $inc * 11; }
+.gs-suffix-12 { padding-right: $inc * 12; }
+.gs-suffix-13 { padding-right: $inc * 13; }
+.gs-suffix-14 { padding-right: $inc * 14; }
+.gs-suffix-15 { padding-right: $inc * 15; }
+.gs-suffix-16 { padding-right: $inc * 16; }
+.gs-suffix-17 { padding-right: $inc * 17; }
+.gs-suffix-18 { padding-right: $inc * 18; }
+.gs-suffix-19 { padding-right: $inc * 19; }
+.gs-suffix-20 { padding-right: $inc * 20; }
+.gs-suffix-21 { padding-right: $inc * 21; }
+.gs-suffix-22 { padding-right: $inc * 22; }
+.gs-suffix-23 { padding-right: $inc * 23; }
+
+/**
+ * Push
+**/
+
+.gs-push-1 { left: $inc; }
+.gs-push-2 { left: $inc * 2; }
+.gs-push-3 { left: $inc * 3; }
+.gs-push-4 { left: $inc * 4; }
+.gs-push-5 { left: $inc * 5; }
+.gs-push-6 { left: $inc * 6; }
+.gs-push-7 { left: $inc * 7; }
+.gs-push-8 { left: $inc * 8; }
+.gs-push-9 { left: $inc * 9; }
+.gs-push-10 { left: $inc * 10; }
+.gs-push-11 { left: $inc * 11; }
+.gs-push-12 { left: $inc * 12; }
+.gs-push-13 { left: $inc * 13; }
+.gs-push-14 { left: $inc * 14; }
+.gs-push-15 { left: $inc * 15; }
+.gs-push-16 { left: $inc * 16; }
+.gs-push-17 { left: $inc * 17; }
+.gs-push-18 { left: $inc * 18; }
+.gs-push-19 { left: $inc * 19; }
+.gs-push-20 { left: $inc * 20; }
+.gs-push-21 { left: $inc * 21; }
+.gs-push-22 { left: $inc * 22; }
+.gs-push-23 { left: $inc * 23; }
+
+/**
+ * Pull
+**/
+
+.gs-pull-1 { left: - $inc; }
+.gs-pull-2 { left: - $inc * 2; }
+.gs-pull-3 { left: - $inc * 3; }
+.gs-pull-4 { left: - $inc * 4; }
+.gs-pull-5 { left: - $inc * 5; }
+.gs-pull-6 { left: - $inc * 6; }
+.gs-pull-7 { left: - $inc * 7; }
+.gs-pull-8 { left: - $inc * 8; }
+.gs-pull-9 { left: - $inc * 9; }
+.gs-pull-10 { left: - $inc * 10; }
+.gs-pull-11 { left: - $inc * 11; }
+.gs-pull-12 { left: - $inc * 12; }
+.gs-pull-13 { left: - $inc * 13; }
+.gs-pull-14 { left: - $inc * 14; }
+.gs-pull-15 { left: - $inc * 15; }
+.gs-pull-16 { left: - $inc * 16; }
+.gs-pull-17 { left: - $inc * 17; }
+.gs-pull-18 { left: - $inc * 18; }
+.gs-pull-19 { left: - $inc * 19; }
+.gs-pull-20 { left: - $inc * 20; }
+.gs-pull-21 { left: - $inc * 21; }
+.gs-pull-22 { left: - $inc * 22; }
+.gs-pull-23 { left: - $inc * 23; }
+
+/**
+ * Other
+**/
+
+.gs-full, .gs-first { margin-left: 0; }
+.gs-full, .gs-last { margin-right: 0; }
+
+.clear {
+  clear: both;
+  display: block;
+  overflow: hidden;
+  visibility: hidden;
+  width: 0;
+  height: 0;
+}
