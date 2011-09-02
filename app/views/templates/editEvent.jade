@@ -6,11 +6,12 @@ form(action="#event-${event.attributes.id}-update", method="post", id="${event.a
         label Title
         .input
           input(type="text", name='title', class='large', value='${event.attributes.title}')
-      .field.field-venue
-        label Venue
-        .input
-          input(type="text", name='venue', class='large', value='${event.attributes.venue}')
-          input(type="text", name='venue-value', class='large value', value='${event.attributes.venue}', style="display: hidden")
+      //
+        .field.field-venue
+          label Venue
+          .input
+            input(type="text", name='venue', class='large', value='${event.attributes.venue}')
+            input(type="text", name='venue-value', class='large value', value='${event.attributes.venue}', style="display: hidden")
       .field.field-score
         label Score
         .input
@@ -51,7 +52,7 @@ form(action="#event-${event.attributes.id}-update", method="post", id="${event.a
 
   .gs-12
     fieldset
-      legend Categories + Tags
+      legend Categories
       .field.field-category
         label Categories
         .input
@@ -64,16 +65,17 @@ form(action="#event-${event.attributes.id}-update", method="post", id="${event.a
             {{/if}}
             {{/each}}
       br
-      .fieldgroup.field-tags
-        label Tags
-        .input
-          input(type="text", name='tag', class='large inline', value='')
-          button.btn.button.inline.add-tag(type="button") Add
-          {{each(i, value) event.attributes.tags}}
-          .tag(name='${value}')
-            span: a(href='#', name='${value}') ${value}
-            button.btn.button.erase(type="button") &#x2716;
-          {{/each}}
+      //
+        .fieldgroup.field-tags
+          label Tags
+          .input
+            input(type="text", name='tag', class='large inline', value='')
+            button.btn.button.inline.add-tag(type="button") Add
+            {{each(i, value) event.attributes.tags}}
+            .tag(name='${value}')
+              span: a(href='#', name='${value}') ${value}
+              button.btn.button.erase(type="button") &#x2716;
+            {{/each}}
   .gs-24
     .field.field-images
       {{each(i, value) event.attributes.images}}

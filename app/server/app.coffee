@@ -162,18 +162,14 @@ exports.actions =
       cb(fields)
 
   modelSave: (model, cb) ->
-      console.log(model)
-      #console.log(SS.app[model.attrs.modelType + 's'].create)
-      console.log(model.attrs.id)
+      console.log(SS.app)
+      console.log(model.attrs.type)
+      console.log(SS.app[model.attrs.type + 's'])
       if model.attrs.id
-        m = SS.app[model.attrs.modelType + 's'].get(model.attrs.id).mport(model).save()
-        console.log(SS.app[model.attrs.modelType + 's'].get(model.attrs.id).mport(model))
-        console.log(m)
+        m = SS.app[model.attrs.type + 's'].get(model.attrs.id).mport(model).save()
         cb(m.xport())
       else
         m = SS.app[model.attrs.modelType + 's'].create(model.attrs)
-        #console.log(m)
-        console.log(m.xport())
         cb(m)
       #cb(application.xport())
 

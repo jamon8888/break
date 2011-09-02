@@ -63,7 +63,7 @@ form(action="#venue-${venue.attributes.id}-update", method="post", id="${venue.a
 
   .gs-12
     fieldset
-      legend Categories + Tags
+      legend Categories
       .field.field-category
         label Categories
         .input
@@ -76,16 +76,17 @@ form(action="#venue-${venue.attributes.id}-update", method="post", id="${venue.a
             {{/if}}
             {{/each}}
       br
-      .fieldgroup.field-tags
-        label Tags
-        .input
-          input(type="text", name='tag', class='large inline', value='')
-          button.btn.button.inline.add-tag(type="button") Add
-          {{each(i, value) venue.attributes.tags}}
-          .tag(name='${value}')
-            span: a(href='#', name='${value}') ${value}
-            button.btn.button.erase(type="button") &#x2716;
-          {{/each}}
+      //
+        .fieldgroup.field-tags
+          label Tags
+          .input
+            input(type="text", name='tag', class='large inline', value='')
+            button.btn.button.inline.add-tag(type="button") Add
+            {{each(i, value) venue.attributes.tags}}
+            .tag(name='${value}')
+              span: a(href='#', name='${value}') ${value}
+              button.btn.button.erase(type="button") &#x2716;
+            {{/each}}
     fieldset
       legend Events
       .field.field-events

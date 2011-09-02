@@ -795,11 +795,12 @@ class exports.editEvent extends kit.form
 
   render: ->
     $(@el).html($('#templates-editEvent').tmpl({event: @model})).appendTo('#content > .inner')
-    $('.field-venue input', @el).autocomplete(
-      source: SS.app.venueTitles
-    ).result( (event, data, formatted) ->
-      $('.field-venue .value').val( data[1] )
-    )
+    console.log(@model)
+    #$('.field-venue input', @el).autocomplete(
+      #source: SS.app.venueTitles
+    #).result( (event, data, formatted) ->
+      #$('.field-venue .value').val( data[1] )
+    #)
 
     super
 
