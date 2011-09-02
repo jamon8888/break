@@ -25,18 +25,22 @@ class exports.main extends kit.router
 
 
   home: (application) ->
+    console.log('tags.length',SS.app.tags.length)
     unless SS.app.tags.length > 0
       SS.server.app.export 'tags', (data) ->
         SS.app.mport(data)
         SS.app.tagTitles = SS.app.tags.pluck 'title'
+    console.log('categories.length',SS.app.categories.length)
     unless SS.app.categories.length > 0
       SS.server.app.export 'categories', (data) ->
         SS.app.mport(data)
         SS.app.categoryTitles = SS.app.categories.pluck 'title'
+    console.log('venues.length',SS.app.venues.length)
     unless SS.app.venues.length > 0
       SS.server.app.export 'venues', (data) ->
         SS.app.mport(data)
         SS.app.venueTitles = SS.app.venues.pluck 'title'
+    console.log('events.length',SS.app.events.length)
     unless SS.app.events.length > 0
       SS.server.app.export 'events', (data) ->
         SS.app.mport(data)
@@ -55,6 +59,7 @@ class exports.main extends kit.router
         .html('<div class="loading">' + quotes[Math.floor(Math.random() * quotes.length)] + '</div>')
         .fadeIn('slow')
     that = @
+    console.log('venues.length',SS.app.venues.length)
     unless SS.app.venues.length > 0
       SS.server.app.export 'venues', (data) ->
         SS.app.mport(data)
@@ -67,6 +72,7 @@ class exports.main extends kit.router
         .html('<div class="loading">' + quotes[Math.floor(Math.random() * quotes.length)] + '</div>')
         .fadeIn('slow')
     that = @
+    console.log('events.length',SS.app.events.length)
     unless SS.app.events.length > 0
       SS.server.app.export 'events', (data) ->
         SS.app.mport(data)
